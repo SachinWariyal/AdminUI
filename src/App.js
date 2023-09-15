@@ -12,6 +12,7 @@ import {
   TableBody,
   Table,
   Button,
+  Typography,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
@@ -211,6 +212,8 @@ function App() {
       // Go to the selected page
       setCurrentPage(newPage);
     }
+    console.log("newPage:", newPage);
+    console.log("currentPage:", currentPage);
   };
 
   /**
@@ -242,7 +245,7 @@ function App() {
                   <Checkbox />
                 </TableCell>
                 <TableCell style={{ fontWeight: "bold" }}>Name</TableCell>
-                <TableCell style={{ fontWeight: "bold" }}>Email</TableCell>
+                <TableCell  className="email-cell" style={{ fontWeight: "bold" }}>Email</TableCell>
                 <TableCell style={{ fontWeight: "bold" }}>Role</TableCell>
                 <TableCell style={{ fontWeight: "bold" }}>Actions</TableCell>
               </TableRow>
@@ -263,11 +266,11 @@ function App() {
                         onChange={(e) => setEditedUserName(e.target.value)} // Update the edited user name
                       />
                     ) : (
-                      user.name
+                      <Typography variant="body1">{user.name}</Typography>
                     )}
                   </TableCell>
-                  <TableCell>{user.email}</TableCell>
-                  <TableCell>{user.role}</TableCell>
+                  <TableCell><Typography variant="body1">{user.email}</Typography></TableCell>
+                  <TableCell><Typography variant="body1">{user.role}</Typography></TableCell>
                   <TableCell>
                     <div center-action-buttons>
                       {editingUserId === user.id ? (
@@ -315,7 +318,7 @@ function App() {
             </Button>
           </div>
           {/* <Pagination/>     */}
-          <div className="pagination-center">
+          <Box className="pagination-center">
             <div className="prev-button">
               <Button onClick={() => handlePageChange(null, 1)}>
                 {" "}
@@ -329,8 +332,9 @@ function App() {
               onChange={handlePageChange}
               variant="outlined"
               color="primary"
+              size="small" 
             />
-            <div className="last-button">
+            <Box className="last-button">
               <Button
                 onClick={() =>
                   handlePageChange(
@@ -343,8 +347,8 @@ function App() {
                 {/* Go to the last page */}
                 <LastPageOutlinedIcon />
               </Button>
-            </div>
-          </div>
+            </Box>
+          </Box>
         </div>
       </Box>
     </div>
