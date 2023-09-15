@@ -13,7 +13,7 @@ To get started with this application, follow these steps:
 
 # Clone the repository to your local machine:
 
-    git clone https://github.com/your-username/react-admin-ui.git
+    git clone https://github.com/SachinWariyal/AdminUI.git
 
 # Navigate to the project directory:
 
