@@ -227,7 +227,7 @@ function App() {
       user.role.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Calculate the index range for the current page
+  // Calculates the index range for the current page
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
@@ -262,8 +262,8 @@ function App() {
                   <TableCell>
                     {editingUserId === user.id ? (
                       <TextField
-                        value={editedUserName} // Replace with the appropriate field value
-                        onChange={(e) => setEditedUserName(e.target.value)} // Update the edited user name
+                        value={editedUserName} 
+                        onChange={(e) => setEditedUserName(e.target.value)}
                       />
                     ) : (
                       <Typography variant="body1">{user.name}</Typography>
@@ -300,8 +300,7 @@ function App() {
                         </>
                       )}
                     </div>
-                  </TableCell>{" "}
-                  {/* Replace with actual actions */}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
