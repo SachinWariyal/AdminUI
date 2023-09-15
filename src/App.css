@@ -1,38 +1,47 @@
-.App {
+*{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: .1px;
+}
+.App-header{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+}
+.pagination{
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* This will push the children to opposite ends */
+  align-items: center; /* Vertically center the children */
 }
 
-.App-link {
-  color: #61dafb;
+.pagination-center {
+  flex-grow: 1; /* This makes the Pagination component expand to fill the available space and stay centered */
+  display: flex;
+  justify-content: center; /* Center the Pagination component horizontally */
+  align-items: center; /* Center the Pagination component vertically */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .delete-button .MuiButton-containedError is a more specific selector that targets a button with the "contained" variant and "error" color when it is a descendant of an element with the class delete-button.  */
+.delete-button .MuiButton-containedError{
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.prev-button{
+  margin-right: -8px;
+  margin-top: 1px;
+}
+.last-button{
+  margin-left: -8px;
+  margin-top: 1px;
+}
+
+.center-action-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
